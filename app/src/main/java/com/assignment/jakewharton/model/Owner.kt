@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Owner(
-    @Expose val id: Int,
+    @Expose val id: Long,
     @Expose val login: String,
     @Expose val url: String
 ): Parcelable

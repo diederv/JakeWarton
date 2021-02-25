@@ -57,3 +57,5 @@ I rushed this first version and I'm eager to:
 - Cache the content using Room, remove the Http Cache layers
 - Refactor the package structure 
 - Replace the deprecated: *NetworkInfo*, *connectivityManager.activeNetworkInfo* & *activeNetwork.isConnected* in the RetrofitModule
+- Translate the technical error-messages to user-friendly messages with an option to reload
+- Add a pull-to-refresh option to the repository-list

@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Repo(
-    @Expose val id: Int,
+    @Expose val id: Long,
     @Expose val name: String,
     @Expose @SerializedName("full_name") val fullName: String,
     @Expose val owner: Owner,

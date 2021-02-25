@@ -15,6 +15,7 @@ import com.assignment.jakewharton.databinding.EventsFragmentBinding
 import com.assignment.jakewharton.model.Repo
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import java.net.URL
 
 
 @ExperimentalCoroutinesApi
@@ -62,12 +63,12 @@ class EventsFragment : Fragment(R.layout.repo_fragment) {
                         progress.visibility = View.GONE
                         error.visibility = View.GONE
                         ownerValue.text = repo.owner.login
-                        ownerUrlValue.text = repo.owner.url
+                        ownerUrlValue.text = crop(repo.owner.url)
                         ownerUrlValue.setOnClickListener {
                             openURL(repo.owner.url)
                         }
                         repoValue.text = repo.name
-                        repoUrlValue.text = repo.htmlUrl
+                        repoUrlValue.text = crop(repo.htmlUrl)
                         repoUrlValue.setOnClickListener {
                             openURL(repo.htmlUrl)
                         }
@@ -78,7 +79,7 @@ class EventsFragment : Fragment(R.layout.repo_fragment) {
                             }.last().apply {
                                 eventTypeValue.text = type
                                 eventActorValue.text = actor.displayLogin
-                                eventActorUrlValue.text = actor.url
+                                eventActorUrlValue.text = crop(actor.url)
                                 eventActorUrlValue.setOnClickListener {
                                     openURL(actor.url)
                                 }
@@ -94,6 +95,10 @@ class EventsFragment : Fragment(R.layout.repo_fragment) {
             }
         }
         viewModel.fetchEvents(repo)
+    }
+
+    private fun crop(urlString: String): String {
+        return URL(urlString).path
     }
 
     private fun openURL(url: String) {
