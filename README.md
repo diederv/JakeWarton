@@ -1,13 +1,14 @@
 
-# Jake Warton
+# Jake Wharton
 
-This Android project is a tribute to Jake Warton 
+This Android project is a tribute to Jake Wharton 
 
 # The challenge
 
  make an Android application that shows a list and a detail screen
  
  Assignment: Using the https://developer.github.com/v3/old rest api from github create an app which list the repositories of user “JakeWharton” and “infinum”.
+ 
  When the user taps a repository it should open a detail screen which shows the following information 
  - the repository owner (owner:login, owner:url)
  - selected repo (name, url) 
@@ -35,12 +36,12 @@ The Building blocks
 
 - It uses the coroutine support for Retrofit
 - It uses a repository to hide the Retrofit Service interface and to add a flow zip function to combine two or more retrofit coroutines
-- It uses the (currently) polular MVVM architectural pattern and the ViewModel is the perfect place to execute the coroutine, exposed by the repository  
-- It uses Hilt support for ViewModels to manage the lifecycle of the ViewModel that outlives configration changes
-- It uses Hilt to implement Dipendency Injection (Inversion Of Control)
+- It uses the (currently) popular MVVM architectural pattern and the ViewModel is the perfect place to execute the coroutine, exposed by the repository  
+- It uses Hilt support for ViewModels to manage the lifecycle of the ViewModel that outlives configuration changes
+- It uses Hilt to implement Dependency Injection (Inversion Of Control)
 - It uses Http interception for caching friendly requests
 - It uses Http interception for local caching
-- It uses Http interception for loggin (Very useful during development)
+- It uses Http interception for login (Very useful during development)
 
 
 # What could be added / refactored
