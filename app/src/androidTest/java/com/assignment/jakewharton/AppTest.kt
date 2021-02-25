@@ -1,9 +1,11 @@
 package com.assignment.jakewharton
 
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
-import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.assignment.jakewharton.adapter.RepoListAdapter
@@ -50,13 +52,16 @@ class AppTest {
     }
 
     @Test
-    fun happyPath() {
+    fun testThatTheMaincontainerIsVisible() {
+        onView(withId(R.id.main)).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun testAndSelectTheFirstRepoAndOpenItsDetailScreen() {
 //        ActivityScenario.launch(RepoActivity::class.java)
-        Espresso.onView(ViewMatchers.withId(R.id.recyclerView)).perform(
-//            RecyclerViewActions.scrollTo(
-//                ViewMatchers.hasDescendant(ViewMatchers.withText("not in the list"))
-//            )
+        onView(withId(R.id.recyclerView)).perform(
             RecyclerViewActions.actionOnItemAtPosition<RepoListAdapter.RepoViewHolder>(0, ViewActions.click())
-        );
+        )
+        onView(withText("displayLogin1")).check(matches(isDisplayed()))
     }
 }

@@ -50,6 +50,7 @@ I rushed this first version and I'm eager to:
 
 - Add UI Tests that use the FakeGitHubRepository. Somehow it is still tricky to overwrite the Hilt modules for tests
 - Add Unit tests
+- Add JavaDoc
 - Enhance the UI with a proper design
 - Extract or Add more styling elements
 - Cache the content using Room, remove the Http Cache layers
