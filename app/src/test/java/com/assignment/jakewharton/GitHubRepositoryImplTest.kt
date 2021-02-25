@@ -24,8 +24,9 @@ class GitHubRepositoryImplTest {
 
                 override suspend fun getEvents(user: String, repo: String): List<Event> {
                     val repos = FakeTestGitHubRepository.provideGitHubRepository().getRepos(user)
-                    val repo = repos.first { it.name == repo }
-                    return FakeTestGitHubRepository.provideGitHubRepository().getRepoEvents(repo)
+                    return FakeTestGitHubRepository.provideGitHubRepository().getRepoEvents(
+                        repos.first { it.name == repo }
+                    )
                 }
             }
         )
@@ -43,9 +44,11 @@ class GitHubRepositoryImplTest {
 
         val gitHubRepository = getGitHubRepositoryImpl()
         val repos = runBlocking { gitHubRepository.getMultipleRepos(listOf("JakeWharton", "infinum")) }
-        assertEquals(repos.first().name, "repo1")
-        assertEquals(repos.get(1).name, "repo2")
-        assertEquals(repos.get(2).name, "repo3")
-        assertEquals(repos.get(3).name, "repo4")
+
+        assertEquals(4, repos.size)
+        assertEquals("repo1", repos.first().name)
+        assertEquals("repo2", repos.get(1).name)
+        assertEquals("repo3", repos.get(2).name)
+        assertEquals("repo4", repos.get(3).name)
     }
 }
