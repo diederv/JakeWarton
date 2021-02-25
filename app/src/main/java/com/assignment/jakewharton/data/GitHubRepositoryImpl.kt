@@ -21,12 +21,9 @@ open class GitHubRepositoryImpl constructor(
         var zip : Flow<List<Repo>>? = null
         users.forEachIndexed() {  index, user ->
             val flow = flowOf(gitHubRetrofit.listRepos(user))
-            when (index) {
-                0 -> zip = flow
-                else -> zip = zip!!.zip(flow) { a, b ->
-                    mutableListOf(a, b).flatten()
-                }
-            }
+            zip = zip?.zip(flow) { a, b ->
+                mutableListOf(a, b).flatten()
+            } ?: flow
         }
         return zip?.single() ?: listOf()
     }
@@ -34,5 +31,4 @@ open class GitHubRepositoryImpl constructor(
     override suspend fun getRepoEvents(repo: Repo): List<Event> {
         return gitHubRetrofit.getEvents(repo.owner.login, repo.name)
     }
-
 }
