@@ -37,8 +37,9 @@ The Building blocks
 - It uses the coroutine support for Retrofit
 - It uses a repository to hide the Retrofit Service interface and to add a flow zip function to combine two or more retrofit coroutines
 - It uses the (currently) popular MVVM architectural pattern and the ViewModel is the perfect place to execute the coroutine, exposed by the repository  
-- It uses Hilt support for ViewModels to manage the lifecycle of the ViewModel that outlives configuration changes
+- It uses Hilt support for ViewModels to manage the lifecycle of the ViewModel that outlives configuration changes (like device rotation)
 - It uses Hilt to implement Dependency Injection (Inversion Of Control)
+- It uses the Kotlin Parcelable annotation in combination with data class to pass objects from Fragment to Activity to Fragment
 - It uses Http interception for caching friendly requests
 - It uses Http interception for local caching
 - It uses Http interception for login (Very useful during development)
@@ -52,7 +53,7 @@ I rushed this first version and I'm eager to:
 - Add Unit tests
 - Add JavaDoc
 - Enhance the UI with a proper design
-- Extract or Add more styling elements
+- Extract or Add more styling elements and use choose a theme and support night-mode 
 - Cache the content using Room, remove the Http Cache layers
 - Refactor the package structure 
 - Replace the deprecated: *NetworkInfo*, *connectivityManager.activeNetworkInfo* & *activeNetwork.isConnected* in the RetrofitModule
