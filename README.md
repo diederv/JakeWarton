@@ -48,8 +48,10 @@ The Building blocks
 
 I rushed this first version and I'm eager to:
 
-- Add some UI Tests that use the FakeGitHubRepository. Somehow it is still tricky to overwrite the Hilt modules for tests
+- Add UI Tests that use the FakeGitHubRepository. Somehow it is still tricky to overwrite the Hilt modules for tests
 - Add Unit tests
+- Enhance the UI with a proper design
 - Extract or Add more styling elements
-- Cache the content using Room
+- Cache the content using Room, remove the Http Cache layers
 - Refactor the package structure 
+- Replace the deprecated: *NetworkInfo*, *connectivityManager.activeNetworkInfo* & *activeNetwork.isConnected* in the RetrofitModule
