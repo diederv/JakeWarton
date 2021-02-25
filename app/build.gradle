@@ -84,4 +84,6 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_version"
 
+    testImplementation "io.mockk:mockk:$mockk_version"
+
 }
