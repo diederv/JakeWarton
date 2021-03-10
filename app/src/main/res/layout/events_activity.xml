@@ -1,7 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsActivity" />
+    tools:context=".RepoActivity">
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="ownerKey,ownerUrlKey,repoKey,repoUrlKey,eventTypeKey,eventActorKey,eventActorUrlKey" />
+
+    <TextView
+        android:id="@+id/ownerKey"
+        style="@style/Key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_owner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ownerValue"
+        style="@style/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintBottom_toBottomOf="@+id/ownerKey" />
+
+    <TextView
+        android:id="@+id/ownerUrlKey"
+        style="@style/Key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_owner_url"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ownerKey" />
+
+    <TextView
+        android:id="@+id/ownerUrlValue"
+        style="@style/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintBottom_toBottomOf="@+id/ownerUrlKey" />
+
+    <TextView
+        android:id="@+id/repoKey"
+        style="@style/Key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_repo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ownerUrlKey" />
+
+    <TextView
+        android:id="@+id/repoValue"
+        style="@style/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintBottom_toBottomOf="@+id/repoKey" />
+
+    <TextView
+        android:id="@+id/repoUrlKey"
+        style="@style/Key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_repo_url"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repoKey" />
+
+    <TextView
+        android:id="@+id/repoUrlValue"
+        style="@style/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintBottom_toBottomOf="@+id/repoUrlKey" />
+
+    <TextView
+        android:id="@+id/eventTypeKey"
+        style="@style/Key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_event_type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repoUrlKey" />
+
+    <TextView
+        android:id="@+id/eventTypeValue"
+        style="@style/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_default_value"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintBottom_toBottomOf="@+id/eventTypeKey" />
+
+    <TextView
+        android:id="@+id/eventActorKey"
+        style="@style/Key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_event_actor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventTypeKey" />
+
+    <TextView
+        android:id="@+id/eventActorValue"
+        style="@style/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_default_value"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintBottom_toBottomOf="@+id/eventActorKey" />
+
+    <TextView
+        android:id="@+id/eventActorUrlKey"
+        style="@style/Key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_event_url"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventActorKey" />
+
+    <TextView
+        android:id="@+id/eventActorUrlValue"
+        style="@style/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repository_default_value"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintBottom_toBottomOf="@+id/eventActorUrlKey" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@android:style/Widget.Material.Light.ProgressBar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
