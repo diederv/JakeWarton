@@ -9,8 +9,8 @@ import androidx.activity.viewModels
 import com.assignment.jakewharton.config.REPO_KEY
 import com.assignment.jakewharton.databinding.EventsActivityBinding
 import com.assignment.jakewharton.model.Repo
-import com.assignment.jakewharton.ui.main.EventResponse
-import com.assignment.jakewharton.ui.main.TributeEventsInfoViewModel
+import com.assignment.jakewharton.viewmodel.EventResponse
+import com.assignment.jakewharton.viewmodel.TributeEventsInfoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import java.net.URL

@@ -1,4 +1,4 @@
-package com.assignment.jakewharton.ui.main
+package com.assignment.jakewharton.viewmodel
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*

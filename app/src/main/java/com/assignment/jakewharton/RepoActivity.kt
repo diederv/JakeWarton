@@ -10,8 +10,8 @@ import com.assignment.jakewharton.adapter.RepoListAdapter
 import com.assignment.jakewharton.config.GITHUB_OWNERS
 import com.assignment.jakewharton.config.REPO_KEY
 import com.assignment.jakewharton.databinding.RepoActivityBinding
-import com.assignment.jakewharton.ui.main.RepoResponse
-import com.assignment.jakewharton.ui.main.TributeInfoViewModel
+import com.assignment.jakewharton.viewmodel.RepoResponse
+import com.assignment.jakewharton.viewmodel.TributeInfoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
